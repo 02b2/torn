@@ -1,0 +1,145 @@
+import React from "react";
+import "./about.css";
+
+class About extends React.Component {
+  render() {
+    // Create an array of mandala shape classes
+    const shapeClasses = ["mandala-shape-1", "mandala-shape-2", "mandala-shape-3"];
+
+    // Create a function that generates a random number
+    function getRandomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // Create a function that generates a random mandala shape
+    function generateShape() {
+      // Generate a random shape class
+      const shapeClass = shapeClasses[getRandomNumber(0, shapeClasses.length - 1)];
+
+      // Create a new div element with the shape class
+      const shape = document.createElement("div");
+      shape.classList.add("shape", shapeClass);
+
+      // Set the top and left properties of the shape to random numbers
+      shape.style.top = `${getRandomNumber(0, window.innerHeight - 50)}px`;
+      shape.style.left = `${getRandomNumber(0, window.innerWidth - 50)}px`;
+
+      // Set the border-radius of the shape to 50% to create a circular shape
+      shape.style.borderRadius = "50%";
+
+      // Append the shape to the body element
+      document.body.appendChild(shape);
+    }
+
+    return (
+      <div>
+        <h1>About</h1>
+        <button onClick={generateShape}>Generate Shape</button>
+      </div>
+    );
+  }
+}
+
+export default About;
+
+import React from "react";
+import "./about.css";
+import { isHtmlElement } from "react-router-dom/dist/dom";
+
+class About extends React.Component {
+  render() {
+    // Create an array of shape classes
+    const shapeClasses = ["circle", "square", "triangle"];
+
+    // Create a function that generates a random number
+    function getRandomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // Create a function that generates a random shape
+    function generateShape() {
+      // Generate a random shape class
+      const shapeClass = shapeClasses[getRandomNumber(0, shapeClasses.length - 1)];
+
+      // Create a new div element with the shape class
+      const shape = document.createElement("div");
+      shape.classList.add("shape", shapeClass);
+
+      // Set the top and left properties of the shape to random numbers
+      shape.style.top = `${getRandomNumber(0, window.innerHeight - 50)}px`;
+      shape.style.left = `${getRandomNumber(0, window.innerWidth - 50)}px`;
+
+      // If the shape is a triangle, set the border-bottom color to a neon green color
+      if (shapeClass === "triangle") {
+        shape.style.borderBottomColor = "#00cc99";
+      }
+
+      // Append the shape to the body element
+      document.body.appendChild(shape);
+    }
+
+    return (
+      <div>
+        <h1>About</h1>
+        <button onClick={generateShape}>Generate Shape</button>
+      </div>
+    );
+  }
+}
+
+export default About;
+
+
+
+everything aligned ish 
+
+import React from 'react';
+import './subscribe.css';
+import { saveAs } from 'file-saver'
+import Navbar from './Navbar';
+import Footer from './Footer';
+
+const Comingsoon = 'https://i.ibb.co/MNw2fvG/comingsoon.png'
+
+const downloadimage=() => {
+    saveAs(Comingsoon, 'coming-soon.png');
+};
+
+const Subscribe = () => {
+  return (
+    <div className='justify-center ' >
+         <Navbar />
+         <p className='neon-text md:text-7xl sm:text-6xl text-center text-4xl font-bold p-2 '>
+          Garden Of Heathens
+        </p>
+    <div className='container flex flex-row'>
+        <div >
+        
+        </div>
+    <div className='box flex'>
+        <span></span>
+        <div className='content'>
+            <img src={Comingsoon} alt="" className="h-50 mx-auto" onClick={downloadimage} />
+        </div> 
+    </div>
+    <div className='box flex'>
+        <span></span>
+        <div className='content'>
+            <img src={Comingsoon} alt="" className="h-50 mx-auto" onClick={downloadimage} />
+        </div> 
+    </div>
+    <div className='box flex '>
+        <span></span>
+        <div className='content'>
+            <img src={Comingsoon} alt="" className="h-50 mx-auto" onClick={downloadimage} />
+        </div> 
+    </div>
+    </div>
+    
+    <Footer />
+</div>
+  );
+};
+
+export default Subscribe;
+

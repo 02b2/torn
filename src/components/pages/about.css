@@ -1,0 +1,53 @@
+/* Set the background color to black */
+body {
+    background-color: black;
+  }
+  
+  /* Define the styles for the shapes */
+  .shape {
+    /* Set the width and height of the shape */
+    width: 50px;
+    height: 50px;
+    /* Set the position of the shape to absolute, 
+       so that it can be placed anywhere on the page */
+    position: absolute;
+    /* Add a neon glow effect to the shape */
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #00cc99, 0 0 70px #00cc99, 0 0 80px #00cc99, 0 0 100px #00cc99, 0 0 150px #00cc99;
+    animation: neon 1.5s ease-in-out infinite alternate;
+  }
+  
+  /* Define the styles for the circle shape */
+  .circle {
+    /* Set the shape to a circle by setting the 
+       border-radius to 50% (half of the width and height) */
+    border-radius: 50%;
+    /* Set the background color of the circle to a neon green color */
+    background-color: #00cc99;
+  }
+  
+  /* Define the styles for the square shape */
+  .square {
+    /* Set the background color of the square to a neon green color */
+    background-color: #00cc99;
+  }
+  
+  /* Define the styles for the triangle shape */
+  .triangle {
+    /* Set the shape to a triangle by setting the 
+       border-bottom and border-left properties */
+    border-bottom: 50px solid #00cc99;
+    border-left: 25px solid transparent;
+    /* Set the top and left properties to position the triangle */
+    top: 0;
+    left: 0;
+  }
+  
+  /* Define the neon animation */
+  @keyframes neon {
+    from {
+      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #00cc99, 0 0 70px #00cc99, 0 0 80px #00cc99, 0 0 100px #00cc99, 0 0 150px #00cc99;
+    }
+    to {
+      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #00cc99, 0 0 50px #00cc99, 0 0 60px #00cc99, 0 0 70px #00cc99, 0 0 80px #00cc99;
+    }
+  }
