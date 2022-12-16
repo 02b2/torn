@@ -1,3 +1,13 @@
+how to deal with upload
+
+upload toipfs
+then user is to input ipfs address into a text box and then they call on rpc with wallet, add there address and there ipfa into a contract, then contrat can check if address and ipfs exist to stop shill posting
+
+
+
+
+
+
 import React from "react";
 import "./about.css";
 

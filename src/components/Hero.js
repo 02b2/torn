@@ -2,6 +2,7 @@ import React from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './hero.css';
 import { saveAs } from 'file-saver';
+import UploadWidget from './UploadWidget'
 
 const Comingsoon = 'https://i.ibb.co/MNw2fvG/comingsoon.png'
 
@@ -36,11 +37,10 @@ const Hero = () => {
             <img src={Comingsoon} alt="" className="h-150 mx-auto" onClick={downloadimage} />
         </div> 
         </div>
-    
     </div>
+    <UploadWidget />
        </section>
     </div>
-   
     </div>
   );
 };
